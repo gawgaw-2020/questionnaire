@@ -10,6 +10,9 @@
   if(!$email = filter_input(INPUT_POST, 'email')) {
     $err[] = 'メールアドレスを入力してください';
   }
+  if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    $err[] = 'メールアドレスは正しい形式で入力してください';
+    }
   $alreadyRecorded = UserLogic::searchUserEmail($_POST);
   $password = filter_input(INPUT_POST, 'password');
   if (!preg_match("/\A[a-z\d]{4,100}+\z/i", $password)) {
