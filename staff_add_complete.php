@@ -4,9 +4,13 @@
   $err = [];
 
 
+
+  // 名前のバリデーション
   if(!$name = filter_input(INPUT_POST, 'name')) {
     $err[] = '名前を入力してください';
   }
+
+  // メールドレスのバリデーション
   if(!$email = filter_input(INPUT_POST, 'email')) {
     $err[] = 'メールアドレスを入力してください';
   }
@@ -14,12 +18,14 @@
     $err[] = 'メールアドレスは正しい形式で入力してください';
     }
   $alreadyRecorded = UserLogic::searchUserEmail($_POST);
+  if ($alreadyRecorded) {
+    $err[] = 'メールアドレスが既に登録されています';
+  }
+
+  // パスワードのバリデーション
   $password = filter_input(INPUT_POST, 'password');
   if (!preg_match("/\A[a-z\d]{4,100}+\z/i", $password)) {
     $err[] = 'パスワードは英数字4文字以上で入力してください';
-  }
-  if ($alreadyRecorded) {
-    $err[] = 'メールアドレスが既に登録されています';
   }
   $password_conf = filter_input(INPUT_POST, 'password_conf');
   if ($password !== $password_conf) {
@@ -28,7 +34,6 @@
 
   if (count($err) === 0) {
     $hasCreated = UserLogic::createUser($_POST);
-
     if (!$hasCreated) {
       $err = '登録に失敗しました';
     }
