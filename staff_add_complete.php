@@ -3,7 +3,6 @@
   require_once 'classes/UserLogic.php';
   $err = [];
 
-  $isCreated = UserLogic::searchUserEmail($_POST);
 
   if(!$name = filter_input(INPUT_POST, 'name')) {
     $err[] = '名前を入力してください';
@@ -11,11 +10,12 @@
   if(!$email = filter_input(INPUT_POST, 'email')) {
     $err[] = 'メールアドレスを入力してください';
   }
+  $alreadyRecorded = UserLogic::searchUserEmail($_POST);
   $password = filter_input(INPUT_POST, 'password');
   if (!preg_match("/\A[a-z\d]{4,100}+\z/i", $password)) {
     $err[] = 'パスワードは英数字4文字以上で入力してください';
   }
-  if ($isCreated) {
+  if ($alreadyRecorded) {
     $err[] = 'メールアドレスが既に登録されています';
   }
   $password_conf = filter_input(INPUT_POST, 'password_conf');
@@ -36,14 +36,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>スタッフ新規登録 完了画面</title>
+  <title>スタッフ新規登録 結果画面</title>
 </head>
 <body>
-  <h2>スタッフ新規登録 完了画面</h2>
+  <h2>スタッフ新規登録 結果画面</h2>
   <?php if(count($err) > 0): ?>
     <?php foreach ($err as $e): ?>
       <p><?= $e; ?></p>
     <?php endforeach; ?>
+    <a href="#" onclick="window.history.back(); return false;">直前のページに戻る</a>
   <?php else: ?>
   <p>スタッフ登録が完了しました。</p>
   <?php endif; ?>

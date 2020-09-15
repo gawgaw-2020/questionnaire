@@ -5,7 +5,6 @@ require_once 'classes/UserLogic.php';
 $stmt = UserLogic::getAllUsers();
 
 
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
