@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>スタッフ登録</title>
+  <title>スタッフ新規登録</title>
 </head>
 <body>
   <h2>スタッフ新規登録</h2>
-  <form action="staff_add_check.php" method="post">
+  <form action="staff_add_complete.php" method="post">
   <p>
     <label for="name">名前</label>
     <input type="text" name="name" id="name">
