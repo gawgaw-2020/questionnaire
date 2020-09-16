@@ -56,12 +56,8 @@ if ( ini_get( 'safe_mode' ) ) {
 //メール送信の結果判定
 if ( $result ) {
   UserLogic::updateAnswer($email);
-  //成功した場合はセッションを破棄
-  $_SESSION = array(); //空の配列を代入し、すべてのセッション変数を消去 
-  session_destroy(); //セッションを破棄
-} else {
-  //送信失敗時（もしあれば）
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -77,6 +73,7 @@ if ( $result ) {
   <p class="result">ご協力ありがとうございました</p>
   <form action="../login/staff_logout.php" method="post">
     <input class="btn-primary" type="submit" name="logout" value="ログアウト">
+    <input type="hidden" name="csrf_token" value="<?= h(setToken()); ?>">
   </form>
 </body>
 </html>
