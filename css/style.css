@@ -70,6 +70,21 @@ input {
   margin-bottom: 24px;
 }
 
+input[type="radio"] {
+  margin: 0;
+  width: 50px;
+}
+
+.radio-label {
+  display: inline-block;
+  margin: 8px 0;
+}
+
+textarea {
+  width: 300px;
+  margin-bottom: 16px;
+}
+
 .err {
   font-size: 16px;
   color: #EB4729;

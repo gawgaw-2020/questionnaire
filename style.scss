@@ -75,6 +75,21 @@ input {
   margin-bottom: 24px;
 }
 
+input[type="radio"] {
+  margin: 0;
+  width: 50px;
+}
+
+.radio-label {
+  display: inline-block;
+  margin: 8px 0;
+}
+
+textarea {
+  width: 300px;
+  margin-bottom: 16px;
+}
+
 // エラー文
 .err {
   font-size: 16px;
@@ -98,6 +113,8 @@ input {
   padding: 8px 0;
 }
 
+// スタッフ一覧
+
 .staff-list {
   max-width: 350px;
   margin: 0 auto;
@@ -119,6 +136,7 @@ input {
     width: 20%;
   }
 }
+
 
 /* -------------------------------------------- */
 /* ▼タブレット用デザイン */
