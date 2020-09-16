@@ -1,7 +1,7 @@
 <?php
 
-  require_once 'classes/UserLogic.php';
-  $err = [];
+require_once __DIR__ . '/../classes/UserLogic.php';
+$err = [];
 
 
 

@@ -7,7 +7,8 @@
 </head>
 <body>
   <h2>スタッフ新規登録</h2>
-  <form action="staff_add_complete.php" method="post">
+  <a href="./index.php">スタッフ一覧へ</a>
+  <form action="./staff_add_complete.php" method="post">
   <p>
     <label for="name">名前</label>
     <input type="text" name="name" id="name">

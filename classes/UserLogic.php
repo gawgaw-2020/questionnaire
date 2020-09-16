@@ -1,6 +1,6 @@
 <?php
 
-require_once 'dbconnect.php';
+require_once __DIR__ . '/../dbconnect.php';
 
 class UserLogic {
 

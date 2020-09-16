@@ -1,6 +1,6 @@
 <?php
 
-require_once 'classes/UserLogic.php';
+require_once __DIR__ . '/../classes/UserLogic.php';
 
 $stmt = UserLogic::getAllUsers();
 
@@ -15,6 +15,7 @@ $stmt = UserLogic::getAllUsers();
 </head>
 <body>
   <h2>スタッフ一覧</h2>
+  <a href="./staff_add.php">スタッフ新規追加</a>
   <ul>
     <?php foreach ($stmt as $row): ?>
     <li>
