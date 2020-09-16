@@ -1,5 +1,12 @@
 # ログイン機能付きアンケートアプリ
 
+スタッフ訪問用URL
+http://gawgaw.crap.jp/questionnaire/login/staff_login.php
+
+管理者用URL
+http://gawgaw.crap.jp/questionnaire/administrator/
+
+
 ## スタッフへ向けてのアンケートを想定
 
 学びたかった機能
