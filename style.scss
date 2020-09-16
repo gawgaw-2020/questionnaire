@@ -27,6 +27,9 @@ input[type="submit"] {
   border: none;
 }
 
+ul {
+  padding: 0;
+}
 
 /*-------------------------------------------------------------------------------------------------
 
@@ -95,6 +98,27 @@ input {
   padding: 8px 0;
 }
 
+.staff-list {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.staff-list__item {
+  display: flex;
+  margin: 8px 0;
+  .id-box {
+    width: 10%;
+  }
+  .name-box {
+    width: 30%;
+  }
+  .email-box {
+    width: 40%;
+  }
+  .q-box {
+    width: 20%;
+  }
+}
 
 /* -------------------------------------------- */
 /* ▼タブレット用デザイン */

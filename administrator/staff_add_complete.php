@@ -63,7 +63,7 @@ unset($_SESSION['csrf_token']);
     <?php endforeach; ?>
     <a class="btn-primary" href="#" onclick="window.history.back(); return false;">直前のページに戻る</a>
   <?php else: ?>
-  <p>スタッフ登録が完了しました。</p>
+  <p class="result">スタッフ登録が完了しました。</p>
   <?php endif; ?>
   <a class="btn-primary" href="./index.php">一覧画面へ戻る</a>
 </body>

@@ -26,6 +26,10 @@ input[type="submit"] {
   border: none;
 }
 
+ul {
+  padding: 0;
+}
+
 /*-------------------------------------------------------------------------------------------------
 
 共通部分
@@ -84,6 +88,34 @@ input {
   font-size: 16px;
   text-align: center;
   padding: 8px 0;
+}
+
+.staff-list {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.staff-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 8px 0;
+}
+
+.staff-list__item .id-box {
+  width: 10%;
+}
+
+.staff-list__item .name-box {
+  width: 30%;
+}
+
+.staff-list__item .email-box {
+  width: 40%;
+}
+
+.staff-list__item .q-box {
+  width: 20%;
 }
 
 /* -------------------------------------------- */
