@@ -1,9 +1,15 @@
 <?php
+session_start();
 
 require_once __DIR__ . '/../classes/UserLogic.php';
 $err = [];
 
+$token = filter_input(INPUT_POST, 'csrf_token');
+if (!isset($_SESSION['csrf_token']) || $token !== $_SESSION['csrf_token']) {
+  exit('不正なリクエストです');
+}
 
+unset($_SESSION['csrf_token']);
 
   // 名前のバリデーション
   if(!$name = filter_input(INPUT_POST, 'name')) {

@@ -1,8 +1,8 @@
 <?php
+  session_start();
 
   require_once __DIR__ . '/../classes/UserLogic.php';
 
-  session_start();
 
   $err = [];
 
@@ -24,6 +24,12 @@
 
   $result = UserLogic::login($email, $password);
 
+  if(!$result) {
+    header('Location: ./staff_login.php');
+    exit();
+  }
+  header('Location: ../staff/index.php');
+  exit();
 ?>
 <!DOCTYPE html>
 <html lang="ja">

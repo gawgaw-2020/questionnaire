@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '../functions.php';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -25,6 +28,7 @@
     <label for="password_conf">確認用パスワード</label>
     <input type="password" name="password_conf" id="password_conf">
   </p>
+  <input type="hidden" name="csrf_token" value="<?= h(setToken()); ?>">
   <p>
     <input type="submit" value="登録する">
   </p>
