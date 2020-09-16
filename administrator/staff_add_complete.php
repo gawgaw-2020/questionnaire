@@ -2,6 +2,7 @@
 session_start();
 
 require_once __DIR__ . '/../classes/UserLogic.php';
+require_once __DIR__ . '/../functions.php';
 $err = [];
 
 $token = filter_input(INPUT_POST, 'csrf_token');
@@ -55,15 +56,15 @@ unset($_SESSION['csrf_token']);
   <title>スタッフ新規登録 結果画面</title>
 </head>
 <body>
-  <h2>スタッフ新規登録 結果画面</h2>
+  <h2 class="page-title">スタッフ新規登録 結果画面</h2>
   <?php if(count($err) > 0): ?>
     <?php foreach ($err as $e): ?>
       <p><?= h($e); ?></p>
     <?php endforeach; ?>
-    <a href="#" onclick="window.history.back(); return false;">直前のページに戻る</a>
+    <a class="btn-primary" href="#" onclick="window.history.back(); return false;">直前のページに戻る</a>
   <?php else: ?>
   <p>スタッフ登録が完了しました。</p>
   <?php endif; ?>
-  <a href="./index.php">一覧画面へ戻る</a>
+  <a class="btn-primary" href="./index.php">一覧画面へ戻る</a>
 </body>
 </html>

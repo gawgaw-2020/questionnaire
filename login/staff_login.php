@@ -26,7 +26,7 @@ $_SESSION = [];
   <title>スタッフログイン</title>
 </head>
 <body>
-  <h2>スタッフログイン</h2>
+  <h2 class="page-title">スタッフログイン</h2>
   <?php if(isset($err['msg'])): ?>
       <p><?= h($err['msg']); ?></p>
   <?php endif; ?>
@@ -47,7 +47,7 @@ $_SESSION = [];
   </p>
   <input type="hidden" name="csrf_token" value="<?= h(setToken()); ?>">
   <p>
-    <input type="submit" value="ログインする">
+    <input class="btn-primary" type="submit" value="ログインする">
   </p>
   </form>
 </body>

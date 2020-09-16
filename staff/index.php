@@ -24,11 +24,11 @@ $login_user = $_SESSION['login_user'];
   <title>アンケート画面</title>
 </head>
 <body>
-  <h2>アンケート画面</h2>
+  <h2 class="page-title">アンケート画面</h2>
   <p>ログインスタッフ：<?= h($login_user['name']); ?></p>
   <p>メールアドレス：<?= h($login_user['email']); ?></p>
   <form action="../login/staff_logout.php" method="post">
-    <input type="submit" name="logout" value="ログアウト">
+    <input class="btn-primary" type="submit" name="logout" value="ログアウト">
   </form>
 </body>
 </html>

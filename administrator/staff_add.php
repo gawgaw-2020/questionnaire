@@ -12,8 +12,8 @@ require_once __DIR__ . '/../functions.php';
   <title>スタッフ新規登録</title>
 </head>
 <body>
-  <h2>スタッフ新規登録</h2>
-  <a href="./index.php">スタッフ一覧へ</a>
+  <h2 class="page-title">スタッフ新規登録</h2>
+  <a class="btn-primary" href="./index.php">スタッフ一覧へ</a>
   <form action="./staff_add_complete.php" method="post">
   <p>
     <label for="name">名前</label>
@@ -33,7 +33,7 @@ require_once __DIR__ . '/../functions.php';
   </p>
   <input type="hidden" name="csrf_token" value="<?= h(setToken()); ?>">
   <p>
-    <input type="submit" value="登録する">
+    <input class="btn-primary"  type="submit"value="登録する">
   </p>
   </form>
 </body>

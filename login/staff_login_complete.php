@@ -44,8 +44,8 @@ exit('不正なリクエストです');
   <title>スタッフログイン 完了画面</title>
 </head>
 <body>
-  <h2>スタッフログイン 完了画面</h2>
+  <h2 class="page-title">スタッフログイン 完了画面</h2>
   <p>ログインが完了しました。</p>
-  <a href="../staff/index.php">アンケート画面へ</a>
+  <a class="btn-primary" href="../staff/index.php">アンケート画面へ</a>
 </body>
 </html>

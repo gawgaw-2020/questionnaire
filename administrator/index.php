@@ -17,8 +17,8 @@ $users = UserLogic::getAllUsers();
   <title>スタッフ一覧</title>
 </head>
 <body>
-  <h2>スタッフ一覧</h2>
-  <a href="./staff_add.php">スタッフ新規追加</a>
+  <h2 class="page-title">スタッフ一覧</h2>
+  <a class="btn-primary" href="./staff_add.php">スタッフ新規追加</a>
   <ul>
     <?php foreach ($users as $row): ?>
     <li>
