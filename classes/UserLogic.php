@@ -102,7 +102,7 @@ class UserLogic {
   /**
    * emailからユーザーを取得
    * @param string $email
-   * @return array|bool $$user|false
+   * @return array|bool $user|false
    */
   public static function getUserByEmail($email) {
     $sql = 'SELECT * FROM users WHERE email=?';
@@ -119,6 +119,31 @@ class UserLogic {
       return $user;
     }
 
+  }
+
+
+    /**
+   * ログインチェック
+   * @return bool $result
+   */
+  public static function checkLogin() {
+    $result = false;
+
+    if (isset($_SESSION['login_user']) && $_SESSION['login_user']['id'] > 0) {
+      return $result = true;
+    }
+
+    return $result;
+
+  }
+
+
+      /**
+   * ログアウト処理
+   */
+  public static function logout() {
+    $_SESSION = array();
+    session_destroy();
   }
 }
 

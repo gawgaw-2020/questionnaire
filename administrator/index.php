@@ -19,9 +19,9 @@ $stmt = UserLogic::getAllUsers();
   <ul>
     <?php foreach ($stmt as $row): ?>
     <li>
-      <p>スタッフID：<?= $row['id'] ?></p>
-      <p>名前：<?= $row['name'] ?></p>
-      <p>メールアドレス：<?= $row['email'] ?></p>
+      <p>スタッフID：<?= h($row['id']) ?></p>
+      <p>名前：<?= h($row['name']) ?></p>
+      <p>メールアドレス：<?= h($row['email']) ?></p>
       <p>
         質問への回答：
         <?php if($row['answer'] === 0): ?>

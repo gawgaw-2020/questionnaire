@@ -1,8 +1,13 @@
 <?php
-  session_start();
+session_start();
 
-  require_once __DIR__ . '/../classes/UserLogic.php';
+require_once __DIR__ . '/../classes/UserLogic.php';
 
+$token = filter_input(INPUT_POST, 'csrf_token');
+
+if (!isset($_SESSION['csrf_token']) || $token !== $_SESSION['csrf_token']) {
+exit('不正なリクエストです');
+}
 
   $err = [];
 
@@ -28,26 +33,17 @@
     header('Location: ./staff_login.php');
     exit();
   }
-  header('Location: ../staff/index.php');
-  exit();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>スタッフ新規登録 結果画面</title>
+  <title>スタッフログイン 完了画面</title>
 </head>
 <body>
-  <h2>スタッフ新規登録 結果画面</h2>
-  <?php if(count($err) > 0): ?>
-    <?php foreach ($err as $e): ?>
-      <p><?= $e; ?></p>
-    <?php endforeach; ?>
-    <a href="#" onclick="window.history.back(); return false;">直前のページに戻る</a>
-  <?php else: ?>
-  <p>スタッフ登録が完了しました。</p>
-  <?php endif; ?>
-  <a href="/index.php">一覧画面へ戻る</a>
+  <h2>スタッフログイン 完了画面</h2>
+  <p>ログインが完了しました。</p>
+  <a href="../staff/index.php">アンケート画面へ</a>
 </body>
 </html>
