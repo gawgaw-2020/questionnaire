@@ -82,12 +82,16 @@ input[type="radio"] {
 
 .radio-label {
   display: inline-block;
-  margin: 8px 0;
+  margin: 8px 0 24px;
 }
 
 textarea {
   width: 300px;
   margin-bottom: 16px;
+}
+
+.texarea-label {
+  margin-bottom: 24px;
 }
 
 // エラー文
