@@ -1,8 +1,9 @@
 <?php
 
 require_once __DIR__ . '/../classes/UserLogic.php';
+require_once __DIR__ . '/../functions.php';
 
-$stmt = UserLogic::getAllUsers();
+$users = UserLogic::getAllUsers();
 
 
 ?>
@@ -17,7 +18,7 @@ $stmt = UserLogic::getAllUsers();
   <h2>スタッフ一覧</h2>
   <a href="./staff_add.php">スタッフ新規追加</a>
   <ul>
-    <?php foreach ($stmt as $row): ?>
+    <?php foreach ($users as $row): ?>
     <li>
       <p>スタッフID：<?= h($row['id']) ?></p>
       <p>名前：<?= h($row['name']) ?></p>

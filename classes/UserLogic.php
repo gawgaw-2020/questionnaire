@@ -33,16 +33,16 @@ class UserLogic {
 
   /**
    * 全てのユーザー情報を取得する
-   * @return object(PDOStatement) $stmt
+   * @return object(PDOStatement) $users
    */
   public static function getAllUsers() {
     $sql = 'SELECT * FROM users';
 
     try {
-      $stmt = connect()->query($sql);
-      return $stmt;
+      $users = connect()->query($sql);
+      return $users;
     } catch(\Exception $e) {
-      return $stmt;
+      return $users;
     }
   }
 
