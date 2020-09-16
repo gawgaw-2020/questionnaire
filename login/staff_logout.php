@@ -26,7 +26,7 @@ UserLogic::logout();
 </head>
 <body>
   <h2 class="page-title">ログアウト 完了画面</h2>
-  <p>ログアウトしました。</p>
+  <p class="result">ログアウトしました。</p>
   <a class="btn-primary" href="staff_login.php">ログイン画面へ</a>
 </body>
 </html>
