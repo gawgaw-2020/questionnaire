@@ -14,7 +14,7 @@ body {
 }
 
 a {
-  color: blue;
+  color: #333;
   text-decoration: none;
 }
 
@@ -37,7 +37,9 @@ input[type="submit"] {
 .page-title {
   font-size: 24px;
   text-align: center;
-  padding: 24px 0;
+  border-bottom: 1px solid #000;
+  padding: 16px;
+  margin-bottom: 34px;
 }
 
 // 共通ボタン
@@ -48,13 +50,50 @@ input[type="submit"] {
   margin: 0 auto 24px;
   font-size: 16px;
   text-align: center;
-  background-color: lightgreen;
+  background: linear-gradient(135deg, #fff056 0%,#a0c84a 100%);
   border-radius: 5px;
 }
 
+// フォーム関連
 
+form {
+  font-size: 16px;
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto;
+}
 
+label {
+  display: block;
+}
 
+input {
+  width: 300px;
+  margin-bottom: 24px;
+}
+
+// エラー文
+.err {
+  font-size: 16px;
+  color: #EB4729;
+  text-align: center;
+  padding: 8px 0;
+}
+
+// フォームに表示するエラー文
+.form-err {
+  font-size: 16px;
+  color: #EB4729;
+  text-align: center;
+  margin-top: -24px;
+}
+
+// 結果メッセージ
+.result {
+  font-size: 16px;
+  text-align: center;
+  padding: 8px 0;
+}
 
 
 /* -------------------------------------------- */

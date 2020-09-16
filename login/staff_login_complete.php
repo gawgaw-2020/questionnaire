@@ -22,6 +22,9 @@ exit('不正なリクエストです');
   }
 
   if (count($err) > 0) {
+    if (isset($_POST['email'])) {
+      $err['input_email'] = $_POST['email'];
+    }
     $_SESSION = $err;
     header('Location: ./staff_login.php');
     exit();
@@ -45,7 +48,7 @@ exit('不正なリクエストです');
 </head>
 <body>
   <h2 class="page-title">スタッフログイン 完了画面</h2>
-  <p>ログインが完了しました。</p>
+  <p class="result">ログインが完了しました。</p>
   <a class="btn-primary" href="../staff/index.php">アンケート画面へ</a>
 </body>
 </html>

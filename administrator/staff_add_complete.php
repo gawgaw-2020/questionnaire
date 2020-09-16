@@ -59,7 +59,7 @@ unset($_SESSION['csrf_token']);
   <h2 class="page-title">スタッフ新規登録 結果画面</h2>
   <?php if(count($err) > 0): ?>
     <?php foreach ($err as $e): ?>
-      <p><?= h($e); ?></p>
+      <p class="err"><?= h($e); ?></p>
     <?php endforeach; ?>
     <a class="btn-primary" href="#" onclick="window.history.back(); return false;">直前のページに戻る</a>
   <?php else: ?>
