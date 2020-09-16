@@ -37,7 +37,6 @@ if (count($err) > 0) {
   exit();
 }
 
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -50,5 +49,32 @@ if (count($err) > 0) {
 </head>
 <body>
   <h2 class="page-title">アンケート 確認画面</h2>
+  <p class="q">名前</p>
+  <p class="a"><?= h($_POST['name']); ?></p>
+  <p class="q">メールアドレス</p>
+  <p class="a"><?= h($_POST['email']); ?></p>
+  <p class="q">評価</p>
+  <p class="a"><?php
+  if ($_POST['satisfaction'] === 'good') {
+    echo h('満足');
+  }
+  if ($_POST['satisfaction'] === 'medium') {
+    echo h('普通');
+  }
+  if ($_POST['satisfaction'] === 'bad') {
+    echo h('不満');
+  }
+  ?></p>
+  <p class="q">メッセージ</p>
+  <p class="a"><?= h($_POST['message']); ?></p>
+  <form action="qa-complete.php" method="post">
+  <p>
+    <input class="btn-primary"  type="submit" value="アンケートを送信する">
+  </p>
+    <input type="hidden" name="name" value="<?= h($_POST['name']); ?>">
+    <input type="hidden" name="email" value="<?= h($_POST['email']); ?>">
+    <input type="hidden" name="satisfaction" value="<?= h($_POST['satisfaction']); ?>">
+    <input type="hidden" name="message" value="<?= h($_POST['message']); ?>">
+  </form>
 </body>
 </html>

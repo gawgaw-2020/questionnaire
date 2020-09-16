@@ -102,6 +102,23 @@ textarea {
   padding: 8px 0;
 }
 
+
+// 入力確認質問
+.q {
+  max-width: 300px;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 8px 0 4px;
+}
+
+// 入力確認答え
+.a {
+  max-width: 300px;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 0 0 8px 16px;
+}
+
 // フォームに表示するエラー文
 .form-err {
   font-size: 16px;
