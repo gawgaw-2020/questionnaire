@@ -145,6 +145,29 @@ class UserLogic {
     $_SESSION = array();
     session_destroy();
   }
+
+
+    /**
+   * emailからanswerカラムを更新
+   * @param string $email
+   * @return bool $result
+   */
+  public static function updateAnswer($email) {
+    $sql = 'UPDATE users SET answer = 1 WHERE email=?';
+
+    $arr = [];
+    $arr[] = $email;
+
+    try {
+      $stmt = connect()->prepare($sql);
+      $result = $stmt->execute($arr);
+      return $result;
+    } catch(\Exception $e) {
+      return $result;
+    }
+
+  }
+
 }
 
 

@@ -75,6 +75,7 @@ if (count($err) > 0) {
     <input type="hidden" name="email" value="<?= h($_POST['email']); ?>">
     <input type="hidden" name="satisfaction" value="<?= h($_POST['satisfaction']); ?>">
     <input type="hidden" name="message" value="<?= h($_POST['message']); ?>">
+    <input type="hidden" name="csrf_token" value="<?= h(setToken()); ?>">
   </form>
 </body>
 </html>
