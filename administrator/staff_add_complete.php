@@ -50,6 +50,8 @@ unset($_SESSION['csrf_token']);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
   <title>スタッフ新規登録 結果画面</title>
 </head>
 <body>
